@@ -47,7 +47,7 @@ public class MemberDAO {
 	// 회원등록 기능
 	boolean insertMember(Member member) {
 		getConn();
-		String sql = "INSERT INTO member(member_no, member_name, member_phone, member_birth, member_gender)\r\n"
+		String sql = "INSERT INTO member(member_no, member_name, member_phone, member_birth, member_gender)"
 				+ "VALUES(member_seq.NEXTVAL, ?, ?, ?, ?)";
 		try {
 			psmt = conn.prepareStatement(sql);
