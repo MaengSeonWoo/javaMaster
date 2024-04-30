@@ -3,6 +3,18 @@
  */
 document.querySelector('#addMember').addEventListener('click',
 	addMemberFnc);
+document.querySelector('#repeatMember').addEventListener('click',
+	repeatMemberFnc);
+
+function repeatMemberFnc(){
+	let no = document.querySelector('#memberNo').value;
+	let name = document.querySelector('#memberName').value;
+	let point = document.querySelector('#memberPoint').value;
+	const memb = {no, name, point};
+	let tr = makeRow(memb);
+	
+	document.querySelector('table#List tbody').appendChild(tr)
+}
 	
 function addMemberFnc(){
 	let no = document.querySelector('#memberNo').value;
