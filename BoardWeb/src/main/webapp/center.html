@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let url = 'https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=284&serviceKey=Uzksb%2F38R7KBgM59AB5kOFVNIVvPNMU4tw5Wa70U4Q5naW%2B500YEh8iyXVWIhhkl3IS3vOGgRzy8ZFX0LPmT5Q%3D%3D';
+		fetch(url)
+		.then(resolve => resolve.json())
+		.then(result => {
+			console.log(result);
+			let data = result.data; // 객체
+			
+			// 서블릿작성(content-type : application/x-www-form-urlencoded)
+			// json문자열(content-type : application/json)
+			fetch('registerCenter.do', {
+				method : 'post',
+				headers : {'Content-type' : 'application/json'},
+				body : JSON.stringify(data) // 객체 => json문자열
+			})
+			.then(resolve => resolve.text()) // "Success" {"retCode" : "OK"}
+			.then(value => {
+				console.log(value)
+			})
+			.catch(err => {
+				console.log(err);
+			})
+		})
+		.catch(err => {
+			console.log(err);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yedam.mapper.ReplyMapper">
+
+  <select id="replyList" resultType="com.yedam.vo.ReplyVO">
+    select *
+    from tbl_replies
+    where board_no = #{boardNo}
+    order by reply_no
+  </select>
+  
+  <select id="replyListPaging" resultType="com.yedam.vo.ReplyVO"
+    parameterType="com.yedam.common.SearchVO">
+    select r.*
+	from (select rownum rn, a.*
+	      from (select *
+                from tbl_replies
+                where board_no = #{boardNo}
+                order by reply_no desc) a
+          <![CDATA[
+	      where  rownum <= (#{rpage} * 5)) r 
+          ]]>
+	where r.rn > (#{rpage} - 1) * 5
+  </select>
+  
+  <delete id="deleteReply" parameterType="int">
+    delete from tbl_replies
+    where reply_no = #{replyNo}
+  </delete>
+  
+  <insert id="insertReply" parameterType="com.yedam.vo.ReplyVO">
+    <selectKey resultType="int" keyProperty="replyNo" order="BEFORE">
+      select replyes_seq.nextval from dual
+    </selectKey>
+    insert into tbl_replies (reply_no, reply, replyer, board_no)
+    values(#{replyNo}, #{reply}, #{replyer}, #{boardNo})
+  </insert>
+  
+  <select id="selectCount" resultType="int">
+    select count(1) from tbl_replies
+    where board_no = #{boardNo}
+  </select>
+  
+  <select id = "selectList" resultType = "com.yedam.vo.CartVO">
+  	select *
+  	from tbl_cart
+  	order by no
+  </select>
+  
+  <update id = "updateCart" parameterType = "com.yedam.vo.CartVO">
+  	update tbl_cart
+  	set qty = qty + #{qty}
+  	where no = #{no}
+  </update>
+  
+  <delete id = "deleteCart" parameterType = "int">
+  	delete from tbl_cart
+  	where no = #{no}
+  </delete>
+  
+  <insert id="insertCenter">
+  	insert into tbl_centers(id, center_name, sido, phone_number, address, center_type)
+  	<foreach collection="array" item="center" 
+  	open=" select " separator=" from dual union all select " close = "from dual">
+  	  #{center.id}, #{center.centerName}, #{center.sido}, #{center.phoneNumber}, #{center.address}, #{center.centerType}
+  	</foreach>
+  </insert>
+  
+  <select id = "basketselectList" resultType = "com.yedam.vo.BasketVO">
+  	select *
+  	from tbl_basket
+  </select>
+  
+  <update id = "updateBasket" parameterType = "com.yedam.vo.BasketVO">
+  	update tbl_basket
+  	set cnt = cnt + #{cnt}
+  	where basket_no = #{basket_no}
+  </update>
+  
+  <delete id = "deleteBasket" parameterType = "int">
+  	delete from tbl_basket
+  	where basket_no = #{basket_no}
+  </delete>
+
+</mapper>

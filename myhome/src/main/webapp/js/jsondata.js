@@ -2,27 +2,27 @@
  * jsondata.js
  */
 
- const employees = `[{"id":1,"first_name":"Rory","last_name":"Huttley","email":"rhuttley0@de.vu","gender":"Female","salary":4215},
-{"id":2,"first_name":"Tucky","last_name":"McCrossan","email":"tmccrossan1@barnesandnoble.com","gender":"Male","salary":4745},
-{"id":3,"first_name":"Kahaleel","last_name":"Schruyer","email":"kschruyer2@ibm.com","gender":"Male","salary":4080},
-{"id":4,"first_name":"Riccardo","last_name":"Seppey","email":"rseppey3@fda.gov","gender":"Male","salary":4126},
-{"id":5,"first_name":"Melloney","last_name":"Bodycote","email":"mbodycote4@people.com.cn","gender":"Female","salary":3826},
-{"id":6,"first_name":"Pam","last_name":"Stinchcombe","email":"pstinchcombe5@gmpg.org","gender":"Female","salary":4103},
-{"id":7,"first_name":"Angy","last_name":"De Brett","email":"adebrett6@webeden.co.uk","gender":"Female","salary":4851},
-{"id":8,"first_name":"Obediah","last_name":"Mack","email":"omack7@state.gov","gender":"Male","salary":3776},
-{"id":9,"first_name":"Jeane","last_name":"Cawdell","email":"jcawdell8@eepurl.com","gender":"Non-binary","salary":4114},
-{"id":10,"first_name":"Arlie","last_name":"Pover","email":"apover9@goo.ne.jp","gender":"Female","salary":4679},
-{"id":11,"first_name":"Maddalena","last_name":"Clynter","email":"mclyntera@meetup.com","gender":"Female","salary":4537},
-{"id":12,"first_name":"Cull","last_name":"McNaught","email":"cmcnaughtb@technorati.com","gender":"Male","salary":4910},
-{"id":13,"first_name":"Roarke","last_name":"Loveridge","email":"rloveridgec@hubpages.com","gender":"Male","salary":3321},
-{"id":14,"first_name":"Shandie","last_name":"Morrel","email":"smorreld@bluehost.com","gender":"Female","salary":3235},
-{"id":15,"first_name":"Brice","last_name":"Galvin","email":"bgalvine@macromedia.com","gender":"Male","salary":3014},
-{"id":16,"first_name":"Freida","last_name":"Moorton","email":"fmoortonf@msu.edu","gender":"Female","salary":4275},
-{"id":17,"first_name":"Garrott","last_name":"Gyngyll","email":"ggyngyllg@elpais.com","gender":"Male","salary":3828},
-{"id":18,"first_name":"Rebeka","last_name":"Dabnor","email":"rdabnorh@usda.gov","gender":"Female","salary":3479},
-{"id":19,"first_name":"Elroy","last_name":"Catherall","email":"ecatheralli@answers.com","gender":"Male","salary":4790},
-{"id":20,"first_name":"Royall","last_name":"Bagnell","email":"rbagnellj@hexun.com","gender":"Male","salary":4322}]`;
+const employees = `[{"id":1,"first_name":"Wilmer","last_name":"Mistry","email":"wmistry0@about.me","gender":"Male","salary":4476},
+{"id":2,"first_name":"Berk","last_name":"Bellward","email":"bbellward1@etsy.com","gender":"Male","salary":3541},
+{"id":3,"first_name":"Danya","last_name":"Lynes","email":"dlynes2@liveinternet.ru","gender":"Male","salary":4874},
+{"id":4,"first_name":"Bastien","last_name":"MacPherson","email":"bmacpherson3@cargocollective.com","gender":"Male","salary":3931},
+{"id":5,"first_name":"Isiahi","last_name":"Forcade","email":"iforcade4@facebook.com","gender":"Bigender","salary":4547},
+{"id":6,"first_name":"Tracie","last_name":"Jordon","email":"tjordon5@smh.com.au","gender":"Genderfluid","salary":3745},
+{"id":7,"first_name":"Ivie","last_name":"Loffel","email":"iloffel6@uiuc.edu","gender":"Female","salary":3715},
+{"id":8,"first_name":"Polly","last_name":"Yetton","email":"pyetton7@alibaba.com","gender":"Female","salary":3037},
+{"id":9,"first_name":"Amos","last_name":"Blodget","email":"ablodget8@wordpress.org","gender":"Male","salary":3623},
+{"id":10,"first_name":"Kristopher","last_name":"Sharpin","email":"ksharpin9@indiegogo.com","gender":"Male","salary":4914},
+{"id":11,"first_name":"Lorilee","last_name":"Cuardall","email":"lcuardalla@china.com.cn","gender":"Female","salary":3066},
+{"id":12,"first_name":"Filippo","last_name":"Coldbathe","email":"fcoldbatheb@vistaprint.com","gender":"Male","salary":3901},
+{"id":13,"first_name":"Carlita","last_name":"Poundesford","email":"cpoundesfordc@slate.com","gender":"Female","salary":3837},
+{"id":14,"first_name":"Lanny","last_name":"McClay","email":"lmcclayd@phpbb.com","gender":"Male","salary":4967},
+{"id":15,"first_name":"Delmore","last_name":"Farrell","email":"dfarrelle@posterous.com","gender":"Male","salary":4734},
+{"id":16,"first_name":"Bellanca","last_name":"Lambard","email":"blambardf@telegraph.co.uk","gender":"Bigender","salary":4380},
+{"id":17,"first_name":"Amargo","last_name":"Kingswood","email":"akingswoodg@un.org","gender":"Female","salary":3526},
+{"id":18,"first_name":"Clare","last_name":"Dwelly","email":"cdwellyh@time.com","gender":"Female","salary":3640},
+{"id":19,"first_name":"Alvina","last_name":"MacCarroll","email":"amaccarrolli@reverbnation.com","gender":"Female","salary":3429},
+{"id":20,"first_name":"Renate","last_name":"Burbury","email":"rburburyj@cloudflare.com","gender":"Female","salary":4105}]`;
 
-console.log(employees);
-const empList = JSON.parse(employees); // 문자열 -> 객체
-console.log(empList);
+//console.log(employees);
+const empList = JSON.parse(employees); // 문자열 -> 객체.
+//console.log(empList);
